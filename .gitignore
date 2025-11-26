@@ -1,0 +1,18 @@
+# CMake build dirs (CLion, etc.)
+cmake-build-*/
+**/cmake-build-*/
+
+# CMake generated files in source dirs
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Object / binary files
+*.o
+*.obj
+*.out
+*.exe
+
+# Misc
+*.log
