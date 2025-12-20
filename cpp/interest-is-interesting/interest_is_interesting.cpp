@@ -19,13 +19,18 @@ double yearly_interest(double balance) {
 // annual_balance_update calculates the annual balance update, taking into
 // account the interest rate.
 double annual_balance_update(double balance) {
-    // TODO: Implement the annual_balance_update function
-    return 0.0;
+    double yi= yearly_interest(balance)+balance;
+    return yi;
 }
 
 // years_until_desired_balance calculates the minimum number of years required
 // to reach the desired balance.
 int years_until_desired_balance(double balance, double target_balance) {
-    // TODO: Implement the years_until_desired_balance function
-    return 0;
+    int cnt=0;
+    while(balance<target_balance){
+        double grow= annual_balance_update(balance);
+        balance= grow;
+        cnt++;
+    }
+    return cnt;
 }
