@@ -1,4 +1,5 @@
 #pragma once
+#include <mutex>
 
 namespace Bankaccount {
 class Bankaccount {
@@ -11,6 +12,7 @@ public:
 private:
     bool m_status=false;
     int m_balance=0;
+    std::mutex m_mutex;
 
 };  // class Bankaccount
 

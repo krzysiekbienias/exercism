@@ -22,6 +22,7 @@ namespace Bankaccount {
     bool Bankaccount::deposit(int value) {
         if (value <0)
             throw std::runtime_error("deposit must be positive");
+        std::lock_guard<std::mutex> lock(m_mutex);
         if (m_status) {
             m_balance += value;
             return true;
@@ -31,6 +32,7 @@ namespace Bankaccount {
     bool Bankaccount::withdraw(int value) {
         if (value<0)
             throw std::runtime_error("Withdraw must be positive number");
+        std::lock_guard<std::mutex> lock(m_mutex);
         if (m_status) {
             m_balance -= value;
             if (m_balance>=0)

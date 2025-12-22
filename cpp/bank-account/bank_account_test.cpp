@@ -164,7 +164,7 @@ TEST_CASE("Cannot deposit negative", "[d45df9ea-1db0-47f3-b18c-d365db49d938]") {
     REQUIRE_THROWS_AS(account.deposit(-50), std::runtime_error);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+//#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("Can handle concurrent transactions",
           "[ba0c1e0b-0f00-416f-8097-a7dfc97871ff]") {
@@ -188,4 +188,4 @@ TEST_CASE("Can handle concurrent transactions",
 
     REQUIRE(account.balance() == 0);
 }
-#endif
+//#endif
